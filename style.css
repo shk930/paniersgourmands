@@ -7,10 +7,28 @@ h1, h2{
 }
 
 .clique {
-    color:grey;
     text-align: center;
 }
 
 body {
     background-color: darksalmon;
+}
+
+span.gauche {
+    float: left;
+}
+
+span.droite {
+    float: right;
+}
+
+p.couleurenhaut {
+    color : white;
+    background-color: black;
+}
+
+.identifiant {
+    border: 1px solid black;
+    padding: 20px;
+    display: inline-block;
 }
