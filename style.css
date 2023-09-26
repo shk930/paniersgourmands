@@ -1,0 +1,23 @@
+img {
+    height: 300px;
+    margin-left: 25%;
+}
+
+h1, h2{
+    text-align: center;
+}
+
+.clique {
+    color:grey;
+    text-align: center;
+}
+
+body {
+    background-color: darksalmon;
+}
+
+
+
+.image {
+    margin-left: 35%;
+}
