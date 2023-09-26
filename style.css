@@ -1,6 +1,5 @@
 img {
     height: 300px;
-    margin-left: 25%;
 }
 
 h1, h2{
@@ -17,7 +16,6 @@ body {
 }
 
 
-
-.image {
-    margin-left: 35%;
+#object-position {
+    object-position: center top;
 }
