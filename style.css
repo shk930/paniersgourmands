@@ -2,8 +2,27 @@ img {
     height: 300px;
 }
 
-h1, h2{
+img.patisserie {
+    height: 300px;
+}
+
+a.txtsoul {
+    text-decoration: none;
+    color: whitesmoke;
+    
+}
+
+
+h1{
     text-align: center;
+    font-size: 70px;
+    font-family: Vladimir Script;
+}
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+
 }
 
 .clique {
@@ -14,21 +33,17 @@ body {
     background-color: darksalmon;
 }
 
-span.gauche {
-    float: left;
-}
-
-span.droite {
-    float: right;
-}
 
 p.couleurenhaut {
-    color : white;
-    background-color: black;
+    color : darksalmon;
 }
 
 .identifiant {
     border: 1px solid black;
     padding: 20px;
     display: inline-block;
+}
+
+img.icon {
+    height: 50px;
 }
