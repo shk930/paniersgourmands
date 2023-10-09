@@ -29,6 +29,7 @@
         <link href="./css/style.css" rel="stylesheet" />
         <!-- responsive style -->
         <link href="./css/responsive.css" rel="stylesheet" />
+        <link rel="stylesheet" href="./php/register.php">
     </head>
     <body>
 
@@ -98,7 +99,7 @@
                           
 
                         <li class="nav-item">
-                          <a class="nav-link" href="./se_connecter.html">
+                          <a class="nav-link" href="./connexion.html">
                             <i class="fa fa-user" aria-hidden="true"></i>
                             <span>
                               Se connecter
@@ -119,7 +120,7 @@
              <div class="card">
                <h2 class="card-title text-center">S'inscrire</a></h2>
                 <div class="card-body py-md-4">
-                 <form _lpchecked="1">
+                 <form _lpchecked="1" method="post" action="register.php">
                     <div class="form-group">
                        <input type="text" class="form-control" id="name" placeholder="Nom">
                   </div>
@@ -135,7 +136,7 @@
                 <input type="password" class="form-control" id="confirm-password" placeholder="Confirmez Le Mot De Passe">
              </div>
              <div class="d-flex flex-row align-items-center justify-content-between">
-                <a href="./se_connecter.html">Se connecter</a>
+                <a href="./connexion.html">Se connecter</a>
                                           <button class="btn btn-primary">Créer un compte</button>
                     </div>
                  </form>
