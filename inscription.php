@@ -118,26 +118,36 @@
             <div class="col-md-5">
              <div class="card">
                <h2 class="card-title text-center">S'inscrire</a></h2>
-               <form action="" method="post">
+
+
+
+               <form action="./traitement.php" method="POST">
                 <div class="card-body py-md-4">
-                    <div class="form-group">
-                       <input type="text" class="form-control" id="nom" placeholder="Nom">
-                  </div>
-                  <div class="form-group">
-                       <input type="email" class="form-control" id="email" placeholder="Email">
+                    <div for="nom" class="form-group">
+                       <input type="text" class="form-control" id="nom" name="nom"placeholder="Nom" required>
+                    </div>
+                  <div for="prenom" class="form-group">
+                       <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prénom" required>
                   </div> 
 
-                  <div class="form-group">
-                    <input type="password" class="form-control" id="mot_de_passe" placeholder="Mot De Passe">
+                  <div for="email" class="form-group">
+                       <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                  </div>
+
+                  <div for="mot_de_passe" class="form-group">
+                    <input type="password" class="form-control" id="mot_de_passe" name="mot_de_passe" placeholder="Mot De Passe" required>
                   </div>
                   <div class="form-group">
-                      <input type="password" class="form-control" id="confirm-password" placeholder="Confirmez Le Mot De Passe">
+                      <input type="password" class="form-control" id="confirm-password" placeholder="Confirmez Le Mot De Passe" required>
                   </div>
                   <div class="d-flex flex-row align-items-center justify-content-between">
                       <a href="./connexion.html">Se connecter</a>
-                                                <button name="submit" class="btn btn-primary">Créer un compte</button>
+                        <input type="submit" value="M'inscrire" name="ok">
                           </div>
                 </form>
+
+
+
                </div>
             </div>
           </div>
