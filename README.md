@@ -15,7 +15,7 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="./images/fevicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
   <title>Les Paniers Gourmands</title>
 
   <!-- bootstrap core css -->
@@ -40,6 +40,7 @@
   <div class="hero_area">
     <div class="hero_bg_box">
       <img src="./images/hero-bg.jpg" alt="">
+
     </div>
     <!-- header section strats -->
     <header class="header_section">
@@ -72,31 +73,41 @@
                 <li class="nav-item active">
                   <a class="nav-link" href="./index.html">Accueil <span class="sr-only">(current)</span></a>
                 </li>
+
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html"> À propos</a>
+                  <a class="nav-link" href="./menu.html">Menus</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="service.html">Menu</a>
+                  <a class="nav-link" href="./contact.html">Contact </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="team.html"> Team</a>
+                  <a class="nav-link" href="./about.html"> À propos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact </a>
+                  <a class="nav-link" href="./commande.html">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <span>
+                      Ma commande
+                    </span>
+                  </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./se_connecter.html">
+                  <a class="nav-link" href="./register.html">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                    <span>
+                      S'inscrire
+                    </span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./connexion.html">
                     <i class="fa fa-user" aria-hidden="true"></i>
                     <span>
                       Se connecter
                     </span>
                   </a>
                 </li>
-                <form class="form-inline justify-content-center">
-                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                  </button>
-                </form>
+
               </ul>
             </div>
           </nav>
@@ -115,7 +126,7 @@
                   <div class="detail-box">
                     <h1>
                       Les Paniers <br>
-                      Gourmands
+                      Gourmands de Juliette
                     </h1>
                     <p>
                       Savourez l'instant avec nos délicieux paniers remplis de gourmandises !
@@ -126,19 +137,6 @@
               </div>
             </div>
           </div>
-
-        <div class="carousel_btn-box">
-          <a class="carousel-control-prev" href="#carouselExample2Controls" role="button" data-slide="prev">
-            <span>
-              <i class="fa fa-arrow-left" aria-hidden="true"></i>
-            </span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExample2Controls" role="button" data-slide="next">
-            <span>
-              <i class="fa fa-arrow-right" aria-hidden="true"></i>
-            </span>
-            <span class="sr-only">Next</span>
           </a>
         </div>
       </div>
@@ -153,8 +151,8 @@
       <div class="info_top">
         <div class="row">
           <div class="col-md-3 ">
-            <a class="navbar-brand" href="index.html">
-              Les Paniers Gourmands
+            <a class="navbar-brand" href="./index.html">
+              <img style="height: 100px;" src="./images/logo.png" alt="Logo d'accueil">
             </a>
           </div>
           <div class="col-md-5 ">
@@ -186,14 +184,14 @@
                 Qui sommes-nous?
               </h5>
               <p>
-                Nous sommes des vendeurs de panier lol
+                Nous sommes les <strong><i>MEILLEURS</i></strong>. 
               </p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="info_form">
               <h5>
-                Bulletin
+                Un problème ?
               </h5>
               <form action="">
                 <input type="text" placeholder="Entrez votre email" />
@@ -209,10 +207,10 @@
                 À propos
               </h5>
               <p style="font-size: 15px;">
-                <u>Email:</u> lespaniersgourmandsdejuliette@gmail.com
+                <u>Email :</u> lespaniersgourmandsdejuliette@gmail.com
                 <br>
                 <br>
-                <u>Téléphone:</u>
+                <u>Téléphone :</u> 07 56 49 81 05
               </p>
             </div>
           </div>
@@ -233,18 +231,18 @@
                   </a>
                 </li>
                 <li>
-                  <a href="./service.html">
-                    Menu
-                  </a>
-                </li>
-                <li>
-                  <a href="./team.html">
-                    Team
+                  <a href="./menu.html">
+                    Menus
                   </a>
                 </li>
                 <li class="mb-0">
                   <a href="./contact.html">
                     Contact
+                  </a>
+                </li>
+                <li class="mb-0">
+                  <a href="./commande.html">
+                    Ma commande
                   </a>
                 </li>
               </ul>
