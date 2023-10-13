@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+<head><script src="./js/color-modes.js"></script>
   <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -95,7 +95,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./connexion.php">
+                  <a class="nav-link" href="./se_connecter.php">
                     <i class="fa fa-user" aria-hidden="true"></i>
                     <span>
                       Se connecter
@@ -125,7 +125,7 @@
         </p>
       </div>
       <div class="row">
-        <div class="col-md-4 col-sm-6 mx-auto">
+        <!--div class="col-md-4 col-sm-6 mx-auto">
           <div class="box">
             <div class="img-box">
               <img src="./images/hero-bg.jpg" alt="">
@@ -169,7 +169,74 @@
               </h6>
             </div>
           </div>
+        </div>-->
+
+
+        <div class="col-md-4 col-sm-6 mx-auto">
+          <div class="card shadow-sm">
+            <img src="./images/t3.jpg" alt="Image de coffret pour le goûter">
+            <!--svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            -->
+              <div class="card-body">
+              <p class="card-text">Voici notre coffret goûter, envie d'un délicieux moment de pur délice, le coffret goûter vous offrira une délicieuse aventure qui éveillera vos papilles.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Acheter</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Détails</button>
+                </div>
+                <small class="text-body-secondary"><strong class="green"> 8.99€</strong></small>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="col-md-4 col-sm-6 mx-auto">
+          <div class="card shadow-sm">
+            <img src="./images/t1.jpg" alt="Image de coffret surprise">
+            <!--svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            -->
+              <div class="card-body">
+              <p class="card-text">Voici notre coffret surprise, plongez dans l'inatendu avec notre mystérieux coffret, où chaque boîte est une promesse d'émerveillement et de découvertes uniques</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Acheter</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Détails</button>
+                </div>
+                <small> <strong class="green">11.99€</strong></small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 mx-auto">
+          <div class="card shadow-sm">
+            <img id="sandwich-image" src="./images/hero-bg3.jpg" alt="Image de coffret sandwich">
+            <!--svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            -->
+              <div class="card-body">
+              <p class="card-text">Voici notre coffret sandwich, un déjeuner frais et consistant parfait pour votre repas du midi, découvrez nos différents sandwich avec boisson et dessert  (choisir votre sandwich)</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Poulet
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><button class="dropdown-item" type="button" id="poulet">Poulet</button></li>
+                    <li><button class="dropdown-item" type="button" id="thon">Thon</button></li>
+                    <li><button class="dropdown-item" type="button" id="fromage">Fromage</button></li>
+                    <li><button class="dropdown-item" type="button" id="jambon">Jambon</button></li>
+                  </ul>
+                </div>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Acheter</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Détails</button>
+                </div>
+                <small class="text-body-secondary"><strong class="green">9.99€</strong></small>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
       </div>
     </div>
   </section>
@@ -296,6 +363,47 @@
   </footer>
   <!-- footer section -->
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Récupérez les éléments bouton pour chaque option du menu déroulant par leur ID
+      var pouletButton = document.querySelector('#poulet');
+      var thonButton = document.querySelector('#thon');
+      var fromageButton = document.querySelector('#fromage');
+      var jambonButton = document.querySelector('#jambon');
+  
+      // Récupérez l'élément d'image par son ID
+      var dropdownButton = document.querySelector('#dropdownMenuButton1');
+      var sandwichImage = document.getElementById('sandwich-image');
+  
+      // Écoutez le clic sur le bouton "Action"
+      pouletButton.addEventListener("click", function () {
+        // Changez l'image en conséquence (remplacez l'URL par celle de votre image pour "Action")
+        dropdownButton.textContent = "Poulet ";
+        sandwichImage.src = "./images/moha.jpg";
+      });
+  
+      // Écoutez le clic sur le bouton "Another Action"
+      thonButton.addEventListener("click", function () {
+        // Changez l'image en conséquence (remplacez l'URL par celle de votre image pour "Another Action")
+        dropdownButton.textContent = "Thon ";
+        sandwichImage.src = "./images/t2.jpg";
+      });
+  
+      // Écoutez le clic sur le bouton "Something Else"
+      fromageButton.addEventListener("click", function () {
+        // Changez l'image en conséquence (remplacez l'URL par celle de votre image pour "Something Else")
+        dropdownButton.textContent = "Fromage ";
+        sandwichImage.src = "./images/t1.jpg";
+      });
+
+      jambonButton.addEventListener("click", function () {
+        // Changez l'image en conséquence (remplacez l'URL par celle de votre image pour "Something Else")
+        dropdownButton.textContent = "Jambon ";
+        sandwichImage.src = "./images/ahah.jpg";
+      });
+    });
+  </script>
+
   <!-- jQery -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <!-- popper js -->
@@ -311,6 +419,9 @@
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
   <!-- End Google Map -->
+
+  <script 
+  src="./assets/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
