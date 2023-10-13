@@ -1,11 +1,3 @@
-<?php 
-
-  
-
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="./js/color-modes.js"></script>
@@ -157,17 +149,17 @@
 
     
 <main class="form-signin w-100 m-auto">
-  <form method="POST" action="">
+  <form method="POST" action="./login.php">
     <a href="./index.php"><img class="mb-4" src="./images/logo.png" alt="logo" height="250"></a>
     <h1 class="h3 mb-3 fw-normal">Veuillez-vous Connecter</h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="login_email" name="login_email" placeholder="name@example.com" required autocomplete="on">
-      <label for="login_email">Email</label>
+      <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="Pseudo" required autocomplete="on">
+      <label for="pseudo">Pseudo</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="login_mdp" name="login_mdp" placeholder="Mot De Passe" required autocomplete="off">
-      <label for="login_mdp">Mot de Passe</label>
+      <input type="password" class="form-control" id="mdp" name="mdp" placeholder="Mot De Passe" required autocomplete="off">
+      <label for="mdp">Mot de Passe</label>
     </div>
 
     <div class="form-check text-start my-3">
