@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['is_logged_in']) || $_SESSION['is_logged_in'] !== true) {
+    header("Location: connexion.php");
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -95,10 +105,10 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./se_connecter.php">
-                    <i class="fa fa-user" aria-hidden="true"></i>
+                  <a class="nav-link" href="./logout.php">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
                     <span>
-                      Se connecter
+                    Se déconnecter
                     </span>
                   </a>
                 </li>
@@ -124,54 +134,8 @@
           Venez acheter les meilleurs coffrets remplis de gourmandises !
         </p>
       </div>
+    <form method="POST" action="./commande_co.php">
       <div class="row">
-        <!--div class="col-md-4 col-sm-6 mx-auto">
-          <div class="box">
-            <div class="img-box">
-              <img src="./images/hero-bg.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Coffret petit-dèj
-              </h5>
-              <h6 class="">
-                8 €
-              </h6>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6 mx-auto">
-          <div class="box">
-            <div class="img-box">
-              <img src="./images/hero-bg2.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Coffret goûter
-              </h5>
-              <h6 class="">
-                6€
-              </h6>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6 mx-auto">
-          <div class="box">
-            <div class="img-box">
-              <img src="./images/hero-bg3.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Coffret Gâteau
-              </h5>
-              <h6 class="">
-                7€
-              </h6>
-            </div>
-          </div>
-        </div>-->
-
-
         <div class="col-md-4 col-sm-6 mx-auto">
           <div class="card shadow-sm">
             <img src="./images/t3.jpg" alt="Image de coffret pour le goûter">
@@ -181,10 +145,11 @@
               <p class="card-text">Voici notre coffret goûter, envie d'un délicieux moment de pur délice, le coffret goûter vous offrira une délicieuse aventure qui éveillera vos papilles.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Acheter</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Détails</button>
+                  <input type="hidden" name ="product_id" value="1">
+                  <input type="hidden" name ="product_name" value="El monstro">
+                  <input type="hidden" name ="product_price" value="8,99€">
+                  <button type="submit" class="btn btn-sm btn-outline-secondary">Ajouter au panier</button>
                 </div>
-                <small class="text-body-secondary"><strong class="green"> 8.99€</strong></small>
               </div>
             </div>
           </div>
@@ -198,10 +163,11 @@
               <p class="card-text">Voici notre coffret surprise, plongez dans l'inatendu avec notre mystérieux coffret, où chaque boîte est une promesse d'émerveillement et de découvertes uniques</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Acheter</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Détails</button>
+                  <input type="hidden" name ="product_id" value="2">
+                  <input type="hidden" name ="product_name" value="El FAMASO ORQUE">
+                  <input type="hidden" name ="product_price" value="11,99€">
+                  <button type="submit" class="btn btn-sm btn-outline-secondary">Ajouter au panier</button>
                 </div>
-                <small> <strong class="green">11.99€</strong></small>
               </div>
             </div>
           </div>
@@ -227,16 +193,16 @@
                   </ul>
                 </div>
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Acheter</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Détails</button>
+                  <input type="hidden" name ="product_id" value="3">
+                  <input type="hidden" name ="product_name" value="Coffret HAHA">
+                  <input type="hidden" name ="product_price" value="9,99€">
+                  <button type="submit" class="btn btn-sm btn-outline-secondary">Ajouter au panier</button>
                 </div>
-                <small class="text-body-secondary"><strong class="green">9.99€</strong></small>
               </div>
             </div>
           </div>
         </div>
-        
-        
+      </form> 
       </div>
     </div>
   </section>

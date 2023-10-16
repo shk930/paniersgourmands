@@ -95,7 +95,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./se_connecter.php">
+                  <a class="nav-link" href="./connexion.php">
                     <i class="fa fa-user" aria-hidden="true"></i>
                     <span>
                       Se connecter
@@ -177,11 +177,13 @@
             <img src="./images/t3.jpg" alt="Image de coffret pour le goûter">
             <!--svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
             -->
+
               <div class="card-body">
               <p class="card-text">Voici notre coffret goûter, envie d'un délicieux moment de pur délice, le coffret goûter vous offrira une délicieuse aventure qui éveillera vos papilles.</p>
+              
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Acheter</button>
+                  <a href="./connexion.php"><button type="button" class="btn btn-sm btn-outline-secondary">Acheter</button></a>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Détails</button>
                 </div>
                 <small class="text-body-secondary"><strong class="green"> 8.99€</strong></small>
@@ -198,7 +200,7 @@
               <p class="card-text">Voici notre coffret surprise, plongez dans l'inatendu avec notre mystérieux coffret, où chaque boîte est une promesse d'émerveillement et de découvertes uniques</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Acheter</button>
+                <a href="./connexion.php"><button type="button" class="btn btn-sm btn-outline-secondary">Acheter</button></a>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Détails</button>
                 </div>
                 <small> <strong class="green">11.99€</strong></small>
@@ -227,7 +229,7 @@
                   </ul>
                 </div>
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Acheter</button>
+                <a href="./connexion.php"><button type="button" class="btn btn-sm btn-outline-secondary">Acheter</button></a>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Détails</button>
                 </div>
                 <small class="text-body-secondary"><strong class="green">9.99€</strong></small>

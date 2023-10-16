@@ -21,7 +21,14 @@ if (isset($_POST['ok'])) {
     $prenom = $_POST['prenom'];
     $pseudo = $_POST['pseudo'];
     $mdp = $_POST['mdp'];
-    $email = $_POST['email'];
+    $email =$_POST['email'];
+    $datenaissance = $_POST['datenaissance'];
+    $telephone = $_POST['telephone'];
+    $genre = $_POST['genre'];
+    $adresse = $_POST['adresse'];
+    $pays = $_POST['pays'];
+    $codepostal= $_POST['codepostal'];
+    $ville = $_POST['ville'];
 
     // Vérification si le pseudo existe déjà
     $checkQueryPseudo = $bdd->prepare("SELECT * FROM users WHERE pseudo = :pseudo");
@@ -42,14 +49,21 @@ if (isset($_POST['ok'])) {
     } else {
 
         $token = generateUniqueToken();
-        $requete = $bdd->prepare("INSERT INTO users (pseudo, nom, prenom, mdp, email, token) VALUES (:pseudo, :nom, :prenom, :mdp, :email, :token)");
+        $requete = $bdd->prepare("INSERT INTO users (pseudo, nom, prenom, mdp, email, token, datenaissance, telephone, genre, adresse, pays, codepostal, ville) VALUES (:pseudo, :nom, :prenom, :mdp, :email, :token, :datenaissance, :telephone, :genre, :adresse, :pays, :codepostal, :ville)");
         $requete->execute(array(
             "pseudo" => $pseudo,
             "nom" => $nom,
             "prenom" => $prenom,
             "mdp" => $mdp,
             "email" => $email,
-            "token" => $token
+            "token" => $token,
+            "datenaissance" => $datenaissance,
+            "telephone" => $telephone,
+            "genre" => $genre,
+            "adresse" => $adresse,
+            "pays" => $pays,
+            "codepostal" => $codepostal,
+            "ville" => $ville
         ));
         
         header("Location: ./register_reussie.php");
