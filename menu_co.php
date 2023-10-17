@@ -14,45 +14,32 @@ if (!isset($_SESSION['is_logged_in']) || $_SESSION['is_logged_in'] !== true) {
     exit();
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['product_id']) && isset($_POST['product_name']) && isset($_POST['product_price']) && isset($_POST['product_image'])) {
-        $product_id = $_POST['product_id'];
-        $product_name = $_POST['product_name'];
-        $product_price = $_POST['product_price'];
-        $product_image = $_POST['product_image'];
-        $product_description = 'Description du produit'; // Ajoutez la description appropriée ici
+if (isset($_POST['add_to_cart'])) {
+    $product_id = $_POST['product_id'];
+    $product_name = $_POST['product_name'];
+    $product_price = $_POST['product_price'];
+    $product_image = $_POST['product_image'];
+    $quantity = (int)$_POST['quantity'];
 
-        // Insertion du produit dans la base de données
-        $stmt = $pdo->prepare("INSERT INTO commandes (product_id, product_name, product_price, product_image, description, quantity) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$product_id, $product_name, $product_price, $product_image, $product_description]);
+    // Créez un tableau pour représenter le produit
+    $product = [
+        'product_id' => $product_id,
+        'product_name' => $product_name,
+        'product_price' => $product_price,
+        'product_image' => $product_image,
+        'quantity' => $quantity,
+    ];
 
-        $product = array(
-            'product_id' => $product_id,
-            'product_name' => $product_name,
-            'product_price' => $product_price,
-            'product_image' => $product_image,
-            'description' => $product_description,
-            'quantity' => 1, // Initial quantity is set to 1
-        );
-        
+    // Récupérez le panier depuis la session s'il existe
+    $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 
-        if (isset($_SESSION['commandes'])) {
-            $existing_keys = array_column($_SESSION['commandes'], 'product_id');
-            if (in_array($product_id, $existing_keys)) {
-                foreach ($_SESSION['commandes'] as &$item) {
-                    if ($item['product_id'] === $product_id) {
-                        $item['quantity'] += 1;
-                    }
-                }
-            } else {
-                $_SESSION['commandes'][] = $product;
-            }
-        } else {
-            $_SESSION['commandes'] = array($product);
-        }
-        
-    }
+    // Ajoutez le produit au panier
+    $cart[] = $product;
+
+    // Stockez le panier mis à jour dans la session
+    $_SESSION['cart'] = $cart;
 }
+
 
 ?>
 
@@ -180,7 +167,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 Venez acheter les meilleurs coffrets remplis de gourmandises !
             </p>
         </div>
-        <form method="POST" action="./commande_co.php">
+        <form method="POST" action="./menu_co.php">
             <div class="row">
                 <div class="col-md-4 col-sm-6 mx-auto">
                     <div class="card shadow-sm">
@@ -194,9 +181,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     <input type="hidden" name="product_price" value="8,99€">
                                     <input type="hidden" name="product_image" value="./images/t3.jpg"> <!-- Ajout du champ pour l'image -->
                                     <!-- Ajoutez name="quantity" à vos boutons "Ajouter au panier" pour spécifier la quantité -->
-                                    <button type="number" name="quantity" value="1" min="1">
-
-                                    <button type="submit" name="quantity" class="btn btn-sm btn-outline-secondary">Ajouter au panier</button>
+                                    <button type="submit" name="quantity" value="1" min="1">Ajouter au panier</button>
+                                    <button type="submit" name="decrement_quantity" value="1">-</button>
+                                    <button type="submit" name="increment_quantity" value="1">+</button>
                                 </div>
                             </div>
                         </div>
@@ -213,9 +200,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     <input type="hidden" name="product_name" value="El FAMASO ORQUE">
                                     <input type="hidden" name="product_price" value="11,99€">
                                     <input type="hidden" name="product_image" value="./images/t1.jpg"> <!-- Ajout du champ pour l'image -->
-                                    <button type="number" name="quantity" value="1" min="1">
-
-                                    <button type="submit" name="quantity" class="btn btn-sm btn-outline-secondary">Ajouter au panier</button>
+                                    <button type="submit" name="quantity" value="1" min="1">Ajouter au panier</button>
+                                    <button type="submit" name="decrement_quantity" value="1">-</button>
+                                    <button type="submit" name="increment_quantity" value="1">+</button>
                                 </div>
                             </div>
                         </div>
@@ -244,9 +231,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     <input type="hidden" name="product_name" value="Coffret HAHA">
                                     <input type="hidden" name="product_price" value="9,99€">
                                     <input type="hidden" name="product_image" value="./images/hero-bg3.jpg"> <!-- Ajout du champ pour l'image -->
-                                    <button type="number" name="quantity" value="1" min="1">
+                                    <button type="submit" name="quantity" value="1" min="1">Ajouter au panier</button>
+                                    <button type="submit" name="decrement_quantity" value="1">-</button>
+                                    <button type="submit" name="increment_quantity" value="1">+</button>
 
-                                    <button type="submit" name="quantity" class="btn btn-sm btn-outline-secondary">Ajouter au panier</button>
                                 </div>
                             </div>
                         </div>
