@@ -4,8 +4,6 @@ $username = "id21391682_lespaniersgourmands";
 $password = "Panier93!";
 $database = "id21391682_lespaniersgourmandsdejuliette";
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 session_start();
 
@@ -13,34 +11,6 @@ if (!isset($_SESSION['is_logged_in']) || $_SESSION['is_logged_in'] !== true) {
     header("Location: connexion.php");
     exit();
 }
-
-if (isset($_POST['add_to_cart'])) {
-    $product_id = $_POST['product_id'];
-    $product_name = $_POST['product_name'];
-    $product_price = $_POST['product_price'];
-    $product_image = $_POST['product_image'];
-    $quantity = (int)$_POST['quantity'];
-
-    // Créez un tableau pour représenter le produit
-    $product = [
-        'product_id' => $product_id,
-        'product_name' => $product_name,
-        'product_price' => $product_price,
-        'product_image' => $product_image,
-        'quantity' => $quantity,
-    ];
-
-    // Récupérez le panier depuis la session s'il existe
-    $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
-
-    // Ajoutez le produit au panier
-    $cart[] = $product;
-
-    // Stockez le panier mis à jour dans la session
-    $_SESSION['cart'] = $cart;
-}
-
-
 ?>
 
 <!DOCTYPE html>
